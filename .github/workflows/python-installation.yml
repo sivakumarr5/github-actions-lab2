@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
   build:
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os:
@@ -14,7 +15,6 @@ jobs:
           - 3.7
           - 3.8
           - 3.9
-    runs-on: ${{ matrix.os }}
     steps:
     - name: Set up Python
       uses: actions/setup-python@v4
